@@ -1,0 +1,9 @@
+spring:
+    application:
+        name: application
+custom-logging:
+    properties:
+        return: WARN
+        before: ERROR
+        throw: ERROR
+        monitoring: INFO
