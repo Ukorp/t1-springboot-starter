@@ -3,15 +3,15 @@ package com.starter.logstarter;
 import org.log.CustomLoggingConfiguration;
 import org.log.aspect.LogAspect;
 import org.log.aspect.TimeMonitoringAspect;
-import org.slf4j.event.Level;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
 @EnableConfigurationProperties(LogProperties.class)
+@ConditionalOnProperty(name = "custom-logging.enabled", havingValue = "true", matchIfMissing = true)
 public class LogAutoConfiguration {
 
     private final LogProperties logProperties;
